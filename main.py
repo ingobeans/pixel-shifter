@@ -25,7 +25,7 @@ def shift_gif(input_gif_path, step=1, to_left=False):
             shifted_image = shift_pixels(image, (i + 1) * -1 * step if to_left else (i + 1) * step)
             frames.append(shifted_image)
 
-    imageio.mimsave(output_gif_path, frames, format='GIF', duration=0.1)
+    imageio.mimsave(output_gif_path, frames, format='GIF', duration=0.1, loop=0)
     print(f"Frames shifted and saved to {output_gif_path}.")
 
 if __name__ == "__main__":
